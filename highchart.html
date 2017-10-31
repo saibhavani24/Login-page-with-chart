@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="controller.js"></script>
+<body ng-app="mainApp"
+background="http://cf.ltkcdn.net/web-design/images/orig/38015-410x293-Web_page_backgrounds.jpg">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 200px; height: 300px; max-width: 550px; margin: 0 auto align:"left"></div>
+<table>
+<script>
+ Highcharts.chart('container', {
+  chart: {
+    plotBackgroundColor: "#FFF263",
+    plotBorderWidth: null,
+    plotShadow: true,
+    type: 'pie'
+  },
+  title: {
+    text: 'Sensor Report'
+  },
+  tooltip: {
+    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+        style: {
+          color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+        }
+      }
+    }
+  },
+  series: [{
+    name: 'sensordata',
+    colorByPoint: true,
+    data:[
+      {name:"gas sensor",
+	  y:20
+	  },{
+	  name:"ir",
+	  y:25    	  
+    }]
+  }]
+});
+</script>
+
+<form action="/insert" method="post">
+<table align="left">
+<section class="input">
+<th><h2>Insert data</h2></th>
+	<div class="input">
+		<tr>
+		<td>
+		<label for="modelname"><b> Model name</label></td>
+		<td>
+		<input type="text" id="modelname"name="modelname" required></td>
+		</tr>
+	</div>
+	<div class="input">
+		<tr>
+		<td>
+		<label for="message"> <b>Message</label></td>
+		<td>
+		<input type="text" id="message" name="message" required></td>
+		</tr>
+	</div>
+	<div class="input">
+		<tr>
+		<td>
+		<label for="X"> <b>x</label></td>
+		<td>
+		<input type="text" id="x" name="x" required></td>
+		</tr>
+	</div>
+	<div class="input">
+		<tr>
+		<td>
+		<label for="y"> <b>Y</label></td>
+		<td>
+		<input type="text" id="y" name="y" required></td>
+		</tr>
+	</div>
+	<tr><td>
+	<button type="submit">Insert</button></td></tr>
+	</form>
+</section>	
+</table>
+
+<section class="get">
+
+<form action="/getdata">
+<table align="center">
+<div ng-controller="sensor">
+<th><h2> Show Data</h2></th>
+<tr><td>
+<a href="/getdata"> Load Data</a></td></tr>
+</table>
+ </div>
+</section>
+</form>
+</body>

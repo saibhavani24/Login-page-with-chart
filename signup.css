@@ -1,10 +1,18 @@
 body {
     min-height:100%;
-    background-color: #420739;
+    background-image: url("https://ak0.picdn.net/shutterstock/videos/15747700/thumb/1.jpg");
 }
-
+table {
+    column-width: 10px;
+	text-align:center;
+    
+}
 .text-center{
   text-align: center;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
 }
 
 .space-bot{
@@ -17,13 +25,21 @@ body {
 
 /* Title */
 
+p{
+	color: black;
+	font-family: sans-serif;
+	font-weight:bold;
+	font-size:16;
+}
 h1 {
-    color: pink;
-    font-family: 'Roboto';
-    text-transform: uppercase;
+    color: black;
+    font-family: arial black;
+    text-transform: capitalize;
     font-weight: 900;
-    font-size: 25px;
+    font-size: 40px;
     text-align: center;
+	letter-spacing: 3px;
+	
 }
 
 h2 {
@@ -34,39 +50,49 @@ h2 {
     font-size: 40px;
     text-align: center;
 }
+
+h3 {
+    color: Red;
+    font-family: courier;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+}
+
 /* Sign Up */
 
 .container {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 100px;
     margin-top: 10px;
-  }
-
-.alert-danger{
 	text-align: center;
 }
 
-.signup-screen {
-	  padding: 20px;
-    padding-bottom: 40px;
-    border-radius: 5px;
-    background-color: #9EB024;
-    box-shadow: 0 1px 6px rgba(0,0,0,.3);
+
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: 10px;
     color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 10px;
 }
 
 .btn{
-  border-radius: 4px;
+  border-radius: 10px;
   position="center";
   
 }
 
 .cancel{
-  background-color: #df405a;
+  background-color: #FF0000;
 }
 
-.done{
-  background-color: #5CAB7D;
+.submit{
+  background-color: #008000;
 }
 
 .done:hover{
@@ -89,6 +115,9 @@ h2 {
     width:100%;
 }
 
+.input-textbox{
+	
+}
 .input-group .ng-invalid {
     border: 2px solid #e74c3c;
     border-radius: 3px;
@@ -99,12 +128,16 @@ h2 {
 .alert{
   padding: 15px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
+  border: 1px power blue;
   border-radius: 2px;
-  border-color: #e85a71;
-  background-color:  #e85a71;
-  color: white;
-  
+  border-color: red;
+  color: red;
+  font-weight:bold;
+  font-size:16;
+ }
+ 
+.alert-danger {
+	text-align: left;
 }
 
 .help-block {
