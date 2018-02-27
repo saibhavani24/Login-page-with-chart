@@ -1,0 +1,67 @@
+<html>
+<head>
+<title> Sign up page for sensor user</title>
+<link rel="stylesheet" type="text/css" href="signup.css">
+</head>
+<body ng-controller="RegisterController" ng-app="myApp">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+</script>
+<script src="/login.html"></script>
+<script src="mongodb://localhost:27017/sensoruser"></script>
+<div class="container">
+<div id="signup">
+<div class="space-bot text-centre">
+<h1> SignUp</h1>
+<div clas="divider"></div>
+</div>
+<table align="right">
+<form class="form register" action="/register" method="post" ng-submit="vm.register()" role="form" >
+<tr><td>
+<p>
+<label for="name"> Name
+</label></td>
+<td>
+<input id="name" name="name" placeholder="Enter Your Name"  type= "text" class="form-control" ng-model="vm.user.firstName" required/>
+</p></td>
+</tr>
+
+<tr><td>
+<p>
+<label for="user-name"> User Name
+</label></td>
+<td>
+<input id="username" placeholder="Enter User Name" name="username"type="text" class="form-control" ng-model="vm.user.username" required /></td>
+</p></tr>
+
+<tr><td>
+<p>
+<label for="password">Password</label></td>
+<td>
+<input id="pass" type="password" name="pass" class="form-control" ng-model="vm.user.password" placeholder="Enter password" required ng-minlength="6" ng-maxlength="10"/>
+</p>
+</td>
+<td>
+ <p class=" alert text-center">Your password must be at least 6 characters.
+ </p></td>
+<br>
+</tr>
+ 
+ <tr>
+ <td>
+  <button  type="submit" class="waves-effect btn submit" ng-click="register()">Submit
+  </button></td>
+ </tr>
+ <tr><td>
+ <h3>
+ <a href="/login.html"  class="btn btn-link">Login</a>
+  
+ </h3></td>
+ </tr>
+
+</div>
+</form>
+</div>
+</div>
+</table>
+</body>
+</html>

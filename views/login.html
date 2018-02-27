@@ -1,0 +1,47 @@
+<html> 
+<head>
+<title> Login page for sensor users</title>
+<link rel="stylesheet" type="text/css" href="signup.css">
+<body ng-controller="LoginController" ng-app="myApp" >
+<script src="/login.html"></script>
+<script src="/highchart.html"></script>
+    <h1>Login</h1><table align="center">
+    <form name="form" ng-submit="vm.login()" role="form" action="/login">
+        <h1><tr>
+		<td>
+		<p  ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="username">Username</label>
+			</td>
+			<td>
+            <input type="text" name="user" id="username" class="form-control" ng-model="vm.username" required />
+        </p></td>
+		</tr>
+		<tr><td>
+        <p  ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+		</td>
+		<td>
+            <input type="password" name="pass" id="password" class="form-control" ng-model="vm.password" required />
+         </td>
+		 
+        </p>
+		</tr>
+		<br><tr><td></td>
+		<td>
+        <div class="form-actions">
+            <button  type="submit" ng-click="redirect()" ng-disabled="form.$invalid || vm.dataLoading" class="waves-effect btn submit">Login</button>
+			</td></tr>
+			<br>
+			<br>
+			<tr><td></td>
+			<td>
+            <h3><a href="signupAngularjs.html" class="btn btn-link">Register</a>
+			<script src="/signupAngularjs.html"></script>
+			</h3>
+			</td></td>
+        </tr<			
+	   </div></h1>
+    </form>
+</table>
+</body>
+</html>
